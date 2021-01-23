@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.79.0">
+    <title>Carousel Template · Bootstrap v5.0</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/carousel/">
+
+    
+    
+    <!-- Bootstrap core CSS -->
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+      .BMICalculator h1{
+        margin: 20px;
+        margin-top: 0px;
+        padding-top:5px;
+        color:black;
+        text-align: center;
+
+      }
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+      .center {
+      margin: auto;
+      width: 60%;
+      border: 3px solid #73AD21;
+      padding: 10px;
+      }
+      .mid
+      {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 40%;
+      }
+    </style>
+    <!--table styling -->
+    
+    <!-- Custom styles for this template -->
+    <link href="HomePageCss.css" rel="stylesheet">
+  </head>
+  <body>
+    
+<header>
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">FitnessGuide</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav me-auto mb-2 mb-md-0">
+          <li class="nav-item" >
+            <a class="nav-link" href="#">BMI Calculator</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Workouts & Programs</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Diet</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Blog</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<div class="BMICalculator" >
+<h1>BMI Calculator</h1>
+<form action="#" class="center" style="background-color: rgb(211,211,211); color: black;">
+  <label for="height" class="mid">Height:</label>
+  <input type="number" id="height" name="Height" class="mid" placeholder="in meters (or) in feet"><br>
+  <label for="weight" class="mid">Weight:</label>
+  <input type="text" id="weight" name="Weight" class="mid" placeholder="in kilograms (or) in pounds"><br>
+  <p class="mid">Please select the Units:</p>
+  <div class="mid">
+  <input type="radio" id="si" name="units">
+  <label for="siunit">SI Unit</label><br>
+  </div>
+  <div class="mid">
+  <input type="radio" id="us" name="units"> 
+  <label for="us">US Unit</label><br>
+  </div><br/>
+  <label for="Age" class="mid">Age (between 2 and 120):</label>
+  <input type="number" id="age" name="Age" min="2" max="120" class="mid"><br/>
+  <button class="mid" id="submit">Result</button><br/>
+  <p id="res" class="mid" style="background-color: green; color: white;">Your BMI : </p>
+
+  
+</form>
+</div>
+
+<script>
+  document.getElementById("submit").addEventListener("click", function() {
+  myFunction(parseFloat(document.getElementById("height").value),parseFloat(document.getElementById("weight").value));
+});
+function myFunction(h,w) {
+  var re = 0;
+  if(document.getElementById("si").checked){
+    re = w /(h * h);
+  }
+  if(document.getElementById("us").checked){
+    re =703*( w /(h * h));
+  }
+  var status="";
+  if(re<18.5){
+    status="Low";
+  }
+  else if(re>18.5&&re<24.9){
+    status="Normal";
+  }
+  else if(re>24.9){
+    status="High";
+  }
+  document.getElementById("res").innerHTML += re+" ( "+status+" )";
+}
+
+</script>
+
+<div >
+  <br/><h1 align="center">BMI Chart</h1>
+  <img src="C://Users/dheeraj kumar/Desktop/MiniProject/MiniProject-FitnessGuide/images4k/bmi1.jpg" class="mid">
+</div>
+
+
+
+</body>
+
+
