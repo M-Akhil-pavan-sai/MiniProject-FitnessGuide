@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>FitnessGuide/Login Page</title>
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="SignupPageCss.css">
+	<style>
+      .center {
+      margin: auto;
+      width: 60%;
+      border: 3px solid grey;
+      padding: 10px;
+      }
+      .mid
+      {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 40%;
+      }
+  	</style>
+    <script type="text/javascript">
+      function validateform()
+      {  
+      var name=document.form.username.value;  
+      var password=document.form.password.value;  
+  
+      if (name==null || name==""){  
+      alert("Name can't be blank");  
+      return false;  
+      }else if(password.length<6){  
+      alert("Password must be at least 6 characters long.");  
+      return false;  
+        }
+      var firstpassword=document.form.password1.value;
+      var secondpassword=document.f.password2.value;
+
+      if(firstpassword==secondpassword){
+      return true;
+      }
+      else{
+      alert("password must be same!");
+      return false;
+        }
+      }  
+    </script>
+</head>
+
+<body>
+	<div class="form">
+	<p>Signup</p>
+	<form>
+    <input type="text" name="name" placeholder="Name">
+		<input type="text" name="username" placeholder="Username or EmailId">
+    <input type="password" name="password1" placeholder="Password">
+		<input type="password" name="password2" placeholder="re-enter Password">
+		<button style="margin-bottom: 10px">Signup</button>
+    <button><a href="LoginPage.html" style="color: white;text-decoration: none;">Back to Login Page</a></button>
+	</form>
+	</div>
+</body>
+
+</html>
